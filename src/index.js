@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 dbConfig()
 
 //routes
+app.get('/', routes.combain(router))
 app.use('/pricing', routes.pricing(router))
 app.use('/feedback', routes.feedback(router))
 app.use('/order', routes.order(router))
