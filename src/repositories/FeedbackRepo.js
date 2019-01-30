@@ -5,9 +5,9 @@ class FeedbackRepo {
         return Feedback.find({}, (err, res) => {
             if (err) {
                 console.log(err)
-                Promise.reject()
+                return Promise.reject(err)
             }
-            Promise.resolve(res)
+            return Promise.resolve(res)
         })
     }
 
@@ -18,27 +18,34 @@ class FeedbackRepo {
     }
 
     static insert(instance) {
-        return new Promise((resolve, reject) => {
-            Feedback.create(instance, (err, ok) => {
-                if (err) {
-                    console.log(err)
-                    reject(err)
-                }
-                resolve(ok)
+        return Feedback.create(instance)
+            .then(result => {
+                console.log(result, '23')
+                return Promise.resolve(result)
+            }).catch(err => {
+                console.log(err)
+                return Promise.reject()
             })
+    }
+    
+    static deleteById(_id) {
+        return Feedback.deleteOne({ _id }, (err) => {
+            if (err) {
+                console.log(err)
+                return Promise.reject(err)
+            }
+            return Promise.resolve()
         })
     }
 
-    static findByProperty(property) {
-
-    }
-
-    static deleteByProperty(property) {
-
-    }
-
-    static updateByPropery(property) {
-
+    static updateById({ _id, feedback }) {
+        return Feedback.update({ _id }, feedback, (err) => {
+            if (err) {
+                console.log(err)
+                return Promise.reject(err)
+            }
+            return Promise.resolve()
+        })
     }
 
 }

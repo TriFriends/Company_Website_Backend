@@ -1,8 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
-import pricingRoutes from './routes/pricing'
-import feedbackRoutes from './routes/feedbacks';
 import { PORT } from './config/variables'
 import { dbConfig } from './config'
 import routes from './routes'
