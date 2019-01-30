@@ -3,25 +3,25 @@ import mongoose from 'mongoose'
 const { Schema } = mongoose
 
 const projectSchema = new Schema({
-    text: {
+    site_title: {
         type: String,
         required: true
     },
-    author: {
-        type: String,
-        required: true
+    site_description: {
+        type: String
     },
-    rate: {
-        type: Number,
-        min: 1,
-        max: 6,
-        required: true
+    site_url: {
+        type: String
     },
-    created_at: {
-        type: Date,
-        required: true
+    images: [
+        {
+            type: String
+        }
+    ],
+    feedback: {
+        type: Object
     }
 })
 
 const Project = mongoose.model('Project', projectSchema)
-export { Project, projectSchema }
+export { Project }

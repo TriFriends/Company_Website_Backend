@@ -8,8 +8,10 @@ const pricingSchema = new Schema({
         required: true
     },
     price: {
-        type: Number,
-        required: true
+        type: Number
+    },
+    discount: {
+        type: String
     },
     dependsOn: {
         type: Array
@@ -17,4 +19,4 @@ const pricingSchema = new Schema({
 })
 
 const Pricing = mongoose.model('Pricing', pricingSchema)
-export { Pricing, pricingSchema }
+export { Pricing }

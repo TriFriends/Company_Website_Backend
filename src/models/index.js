@@ -1,12 +1,13 @@
-import { Pricing, pricingSchema } from './pricing'
-import { Feedback, feedbackSchema } from './feedback'
-import { Project, projectSchema } from './project'
+import { Pricing } from './pricing'
+import { Feedback } from './feedback'
+import { User } from './user'
+import { Project } from './project'
+import { Order } from './order'
 
 export {
     Pricing,
-    pricingSchema,
     Feedback,
-    feedbackSchema,
+    User,
     Project,
-    projectSchema
+    Order
 }

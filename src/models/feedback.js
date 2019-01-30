@@ -7,7 +7,7 @@ const feedbackSchema = new Schema({
         type: String,
         required: true
     },
-    author: {
+    principal: {
         type: String,
         required: true
     },
@@ -24,4 +24,4 @@ const feedbackSchema = new Schema({
 })
 
 const Feedback = mongoose.model('Feedback', feedbackSchema)
-export { Feedback, feedbackSchema }
+export { Feedback }
