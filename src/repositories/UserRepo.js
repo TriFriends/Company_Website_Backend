@@ -1,6 +1,6 @@
-import { Project } from '../models'
+import { User } from '../models'
 
-class ProjectRepo {
+class UserRepo {
     static findAll() {
 
     }
@@ -23,4 +23,4 @@ class ProjectRepo {
 
 }
 
-export default ProjectRepo
+export default UserRepo

@@ -10,7 +10,7 @@ class PricingRepo {
         })
     }
 
-    static insert(pricing) {
+    static insert(instance) {
 
     }
 

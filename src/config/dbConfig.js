@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
-import {MONGODB_URI} from './variables'
+import { MONGODB_URI } from './variables'
+import { feedbackExamples } from './onInit'
 
 export default () => {
     mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, (err) => {
@@ -9,5 +10,6 @@ export default () => {
             process.exit(1)
         }
         console.log(`[MONGODB] Connected to instance on ${MONGODB_URI}`)
+        feedbackExamples()
     });
 }
